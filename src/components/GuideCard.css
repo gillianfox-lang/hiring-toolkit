@@ -1,0 +1,144 @@
+.guide-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.guide-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.guide-card--expanded {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.guide-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  padding: 20px 24px;
+  text-align: left;
+}
+
+.guide-card-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.guide-card-info {
+  flex: 1;
+}
+
+.guide-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 4px;
+}
+
+.guide-card-summary {
+  font-size: 0.88rem;
+  color: var(--color-gray-500);
+  line-height: 1.5;
+}
+
+.guide-card-arrow {
+  font-size: 1rem;
+  color: var(--color-gray-400);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.guide-card-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Expanded content */
+.guide-card-content {
+  padding: 0 24px 24px;
+  border-top: 1px solid var(--color-gray-200);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.guide-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guide-block-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2px;
+}
+
+.guide-block-heading-sub {
+  font-weight: 400;
+  color: var(--color-navy);
+}
+
+.guide-paragraph {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--color-gray-700);
+}
+
+.guide-bullet {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-gray-700);
+  padding-left: 20px;
+  position: relative;
+}
+
+.guide-bullet::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+}
+
+.guide-bullet strong {
+  color: var(--color-navy);
+}
+
+@media (max-width: 640px) {
+  .guide-card-header {
+    padding: 16px;
+  }
+
+  .guide-card-content {
+    padding: 0 16px 16px;
+    padding-top: 16px;
+  }
+
+  .guide-card-icon {
+    font-size: 1.6rem;
+  }
+}

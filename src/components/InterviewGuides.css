@@ -1,0 +1,25 @@
+.interview-guides {
+  padding: 64px 24px;
+  background: var(--color-white);
+}
+
+.interview-guides-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .interview-guides {
+    padding: 48px 16px;
+  }
+
+  .guides-grid {
+    grid-template-columns: 1fr;
+  }
+}

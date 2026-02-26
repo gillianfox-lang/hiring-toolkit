@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#1A365D"/>
+      <stop offset="100%" stop-color="#142848"/>
+    </linearGradient>
+    <radialGradient id="bg4Light" cx="0.5" cy="0.3" r="0.7">
+      <stop offset="0%" stop-color="#2A4A78" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="skin4Base" cx="0.45" cy="0.35" r="0.55">
+      <stop offset="0%" stop-color="#F5D8BC"/>
+      <stop offset="55%" stop-color="#EDCCA8"/>
+      <stop offset="100%" stop-color="#DEB894"/>
+    </radialGradient>
+    <radialGradient id="skin4Shadow" cx="0.5" cy="0.2" r="0.7">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="70%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="rgba(120,70,30,0.12)"/>
+    </radialGradient>
+    <linearGradient id="neck4Shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DEB894"/>
+      <stop offset="100%" stop-color="#CEAA84"/>
+    </linearGradient>
+    <linearGradient id="blazer4Grad" x1="0" y1="0" x2="0.15" y2="1">
+      <stop offset="0%" stop-color="#3A4350"/>
+      <stop offset="50%" stop-color="#2E3744"/>
+      <stop offset="100%" stop-color="#222B38"/>
+    </linearGradient>
+    <linearGradient id="blazer4Highlight" x1="0.25" y1="0" x2="0.75" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.07)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <linearGradient id="hair4Grad" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#1E1E32"/>
+      <stop offset="40%" stop-color="#151528"/>
+      <stop offset="100%" stop-color="#0E0E1C"/>
+    </linearGradient>
+    <radialGradient id="hair4Shine" cx="0.35" cy="0.22" r="0.4">
+      <stop offset="0%" stop-color="rgba(65,65,100,0.3)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="cheek4" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="rgba(215,140,115,0.18)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <linearGradient id="iris4Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2510"/>
+      <stop offset="50%" stop-color="#2C1A08"/>
+      <stop offset="100%" stop-color="#1A0E04"/>
+    </linearGradient>
+    <radialGradient id="lip4Color" cx="0.5" cy="0.4" r="0.5">
+      <stop offset="0%" stop-color="#D09088"/>
+      <stop offset="100%" stop-color="#B87870"/>
+    </radialGradient>
+    <linearGradient id="glassFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4A5568"/>
+      <stop offset="100%" stop-color="#3A4250"/>
+    </linearGradient>
+    <filter id="skinBlur4">
+      <feGaussianBlur stdDeviation="0.5"/>
+    </filter>
+    <filter id="glassShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="0" dy="1.5"/>
+      <feComposite in2="SourceAlpha" operator="out"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0"/>
+      <feBlend in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bg4)"/>
+  <rect width="400" height="400" fill="url(#bg4Light)"/>
+
+  <!-- Shoulders / Blazer -->
+  <ellipse cx="200" cy="430" rx="168" ry="108" fill="url(#blazer4Grad)"/>
+  <ellipse cx="200" cy="430" rx="168" ry="108" fill="url(#blazer4Highlight)"/>
+  <rect x="148" y="315" width="104" height="52" rx="6" fill="url(#blazer4Grad)"/>
+
+  <!-- White shirt underneath -->
+  <path d="M174 315 L200 346 L226 315" fill="white"/>
+  <path d="M174 315 L200 346 L226 315" fill="rgba(242,242,248,0.9)"/>
+
+  <!-- Blazer lapels -->
+  <path d="M174 315 L162 338" fill="none" stroke="rgba(0,0,0,0.07)" stroke-width="1.5"/>
+  <path d="M226 315 L238 338" fill="none" stroke="rgba(0,0,0,0.07)" stroke-width="1.5"/>
+
+  <!-- Neck shadow -->
+  <ellipse cx="200" cy="318" rx="28" ry="7" fill="rgba(120,70,30,0.12)"/>
+
+  <!-- Neck - feminine -->
+  <rect x="183" y="280" width="34" height="40" rx="10" fill="url(#neck4Shade)"/>
+  <ellipse cx="200" cy="286" rx="20" ry="5" fill="rgba(120,70,30,0.1)"/>
+
+  <!-- Head -->
+  <ellipse cx="200" cy="205" rx="78" ry="93" fill="url(#skin4Base)" filter="url(#skinBlur4)"/>
+  <ellipse cx="200" cy="205" rx="78" ry="93" fill="url(#skin4Shadow)"/>
+
+  <!-- Jaw - soft, professional -->
+  <path d="M142 228 Q157 286 200 298 Q243 286 258 228" fill="none" stroke="rgba(130,75,30,0.04)" stroke-width="1.5"/>
+
+  <!-- Cheek blush -->
+  <ellipse cx="153" cy="244" rx="22" ry="16" fill="url(#cheek4)"/>
+  <ellipse cx="247" cy="244" rx="22" ry="16" fill="url(#cheek4)"/>
+
+  <!-- Forehead highlight -->
+  <ellipse cx="200" cy="168" rx="38" ry="20" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- Ears (partially hidden) -->
+  <ellipse cx="122" cy="216" rx="10" ry="17" fill="#DEB894"/>
+  <ellipse cx="278" cy="216" rx="10" ry="17" fill="#DEB894"/>
+
+  <!-- Silver stud earrings -->
+  <circle cx="121" cy="228" r="3.5" fill="#B0B8C4"/>
+  <circle cx="121" cy="228" r="2.2" fill="#C8D0D8" opacity="0.7"/>
+  <circle cx="120" cy="227" r="0.8" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="279" cy="228" r="3.5" fill="#B0B8C4"/>
+  <circle cx="279" cy="228" r="2.2" fill="#C8D0D8" opacity="0.7"/>
+  <circle cx="278" cy="227" r="0.8" fill="rgba(255,255,255,0.5)"/>
+
+  <!-- Hair base - professional bob -->
+  <path d="M118 200 Q115 118 200 108 Q285 118 282 200 L282 168 Q278 128 200 115 Q122 128 118 168 Z" fill="url(#hair4Grad)"/>
+  <path d="M120 198 Q128 152 200 142 Q272 152 280 198" fill="url(#hair4Grad)"/>
+  <path d="M118 200 Q115 118 200 108 Q285 118 282 200 L282 168 Q278 128 200 115 Q122 128 118 168 Z" fill="url(#hair4Shine)"/>
+
+  <!-- Side bob -->
+  <path d="M118 200 Q115 240 122 272 Q128 248 132 235 Q130 218 120 200" fill="url(#hair4Grad)"/>
+  <path d="M282 200 Q285 240 278 272 Q272 248 268 235 Q270 218 280 200" fill="url(#hair4Grad)"/>
+
+  <!-- Hair texture -->
+  <path d="M148 122 Q170 116 190 118" fill="none" stroke="rgba(55,55,85,0.18)" stroke-width="0.8"/>
+  <path d="M155 118 Q178 112 200 113" fill="none" stroke="rgba(55,55,85,0.14)" stroke-width="0.7"/>
+  <path d="M200 112 Q222 111 248 118" fill="none" stroke="rgba(55,55,85,0.14)" stroke-width="0.7"/>
+  <path d="M235 122 Q252 116 268 124" fill="none" stroke="rgba(55,55,85,0.18)" stroke-width="0.8"/>
+  <!-- Bob strands -->
+  <path d="M119 210 Q117 235 121 260" fill="none" stroke="rgba(55,55,85,0.12)" stroke-width="0.7"/>
+  <path d="M124 205 Q122 230 125 255" fill="none" stroke="rgba(55,55,85,0.1)" stroke-width="0.6"/>
+  <path d="M281 210 Q283 235 279 260" fill="none" stroke="rgba(55,55,85,0.12)" stroke-width="0.7"/>
+  <path d="M276 205 Q278 230 275 255" fill="none" stroke="rgba(55,55,85,0.1)" stroke-width="0.6"/>
+  <!-- Parting -->
+  <path d="M192 110 Q198 107 204 110" fill="none" stroke="rgba(75,70,100,0.15)" stroke-width="1.5"/>
+
+  <!-- Eyebrow bone shadow -->
+  <path d="M148 204 Q170 197 190 201" fill="none" stroke="rgba(110,65,25,0.06)" stroke-width="3.5"/>
+  <path d="M210 201 Q230 197 252 204" fill="none" stroke="rgba(110,65,25,0.06)" stroke-width="3.5"/>
+
+  <!-- Eyebrows - confident, well-shaped -->
+  <path d="M150 199 Q160 193 170 192 Q180 193 187 197" fill="rgba(26,26,46,0.8)" stroke="none"/>
+  <path d="M213 197 Q220 193 230 192 Q240 193 250 199" fill="rgba(26,26,46,0.8)" stroke="none"/>
+  <path d="M152 198 Q164 194 176 195" fill="none" stroke="rgba(26,26,46,0.3)" stroke-width="0.5"/>
+  <path d="M224 195 Q236 194 248 198" fill="none" stroke="rgba(26,26,46,0.3)" stroke-width="0.5"/>
+
+  <!-- Glasses - realistic rectangular frames -->
+  <g filter="url(#glassShadow)">
+    <!-- Left lens -->
+    <rect x="149" y="202" rx="6" ry="6" width="42" height="25" fill="none" stroke="url(#glassFrame)" stroke-width="2.8"/>
+    <!-- Right lens -->
+    <rect x="209" y="202" rx="6" ry="6" width="42" height="25" fill="none" stroke="url(#glassFrame)" stroke-width="2.8"/>
+    <!-- Bridge -->
+    <path d="M191 214 Q200 210 209 214" fill="none" stroke="url(#glassFrame)" stroke-width="2.2"/>
+    <!-- Temple arms -->
+    <path d="M149 212 L128 209" fill="none" stroke="url(#glassFrame)" stroke-width="2"/>
+    <path d="M251 212 L272 209" fill="none" stroke="url(#glassFrame)" stroke-width="2"/>
+  </g>
+  <!-- Lens reflection -->
+  <path d="M155 206 L162 206" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-linecap="round"/>
+  <path d="M215 206 L222 206" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Eye sockets -->
+  <ellipse cx="170" cy="214" rx="16" ry="11" fill="rgba(120,65,25,0.04)"/>
+  <ellipse cx="230" cy="214" rx="16" ry="11" fill="rgba(120,65,25,0.04)"/>
+
+  <!-- Left eye (through glasses) -->
+  <ellipse cx="170" cy="214" rx="13" ry="9" fill="white"/>
+  <ellipse cx="170" cy="214" rx="13" ry="9" fill="rgba(225,235,245,0.2)"/>
+  <circle cx="172" cy="214" r="6.5" fill="url(#iris4Grad)"/>
+  <circle cx="172" cy="214" r="5" fill="none" stroke="rgba(50,30,10,0.25)" stroke-width="0.5"/>
+  <circle cx="172" cy="214" r="3" fill="#0A0A10"/>
+  <circle cx="174" cy="212" r="2" fill="white" opacity="0.85"/>
+  <circle cx="169" cy="216" r="0.9" fill="white" opacity="0.35"/>
+  <path d="M157 210 Q163 205 170 204 Q177 205 183 210" fill="none" stroke="rgba(26,26,46,0.55)" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Lashes -->
+  <path d="M157 210 Q155 207 154 205" fill="none" stroke="rgba(26,26,46,0.45)" stroke-width="0.8"/>
+  <path d="M160 208 Q159 205 158 204" fill="none" stroke="rgba(26,26,46,0.35)" stroke-width="0.6"/>
+  <path d="M183 210 Q185 207 186 206" fill="none" stroke="rgba(26,26,46,0.4)" stroke-width="0.7"/>
+  <path d="M157 218 Q170 222 183 218" fill="none" stroke="rgba(26,26,46,0.08)" stroke-width="0.7"/>
+
+  <!-- Right eye -->
+  <ellipse cx="230" cy="214" rx="13" ry="9" fill="white"/>
+  <ellipse cx="230" cy="214" rx="13" ry="9" fill="rgba(225,235,245,0.2)"/>
+  <circle cx="232" cy="214" r="6.5" fill="url(#iris4Grad)"/>
+  <circle cx="232" cy="214" r="5" fill="none" stroke="rgba(50,30,10,0.25)" stroke-width="0.5"/>
+  <circle cx="232" cy="214" r="3" fill="#0A0A10"/>
+  <circle cx="234" cy="212" r="2" fill="white" opacity="0.85"/>
+  <circle cx="229" cy="216" r="0.9" fill="white" opacity="0.35"/>
+  <path d="M217 210 Q223 205 230 204 Q237 205 243 210" fill="none" stroke="rgba(26,26,46,0.55)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M217 210 Q215 207 214 205" fill="none" stroke="rgba(26,26,46,0.45)" stroke-width="0.8"/>
+  <path d="M220 208 Q219 205 218 204" fill="none" stroke="rgba(26,26,46,0.35)" stroke-width="0.6"/>
+  <path d="M243 210 Q245 207 246 206" fill="none" stroke="rgba(26,26,46,0.4)" stroke-width="0.7"/>
+  <path d="M217 218 Q230 222 243 218" fill="none" stroke="rgba(26,26,46,0.08)" stroke-width="0.7"/>
+
+  <!-- Nose -->
+  <path d="M198 200 Q196 225 194 238" fill="none" stroke="rgba(130,75,30,0.1)" stroke-width="1.2"/>
+  <path d="M200 225 Q195 242 190 246 Q200 250 210 246 Q205 242 200 225" fill="rgba(210,175,135,0.45)"/>
+  <ellipse cx="193" cy="244" rx="2.8" ry="1.8" fill="rgba(120,65,25,0.1)"/>
+  <ellipse cx="207" cy="244" rx="2.8" ry="1.8" fill="rgba(120,65,25,0.1)"/>
+  <path d="M199 208 L199 234" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+
+  <!-- Mouth / Lips -->
+  <path d="M180 260 Q192 256 200 258 Q208 256 220 260" fill="url(#lip4Color)" opacity="0.55"/>
+  <path d="M182 260 Q200 272 218 260" fill="url(#lip4Color)" opacity="0.4"/>
+  <path d="M180 260 Q200 265 220 260" fill="none" stroke="rgba(160,80,65,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Cupid's bow -->
+  <path d="M194 258 Q197 256 200 257 Q203 256 206 258" fill="none" stroke="rgba(160,80,65,0.18)" stroke-width="0.5"/>
+  <!-- Teeth hint -->
+  <path d="M188 260 Q200 263 212 260 Q200 268 188 260" fill="rgba(255,255,255,0.65)"/>
+  <!-- Lower lip highlight -->
+  <ellipse cx="200" cy="267" rx="10" ry="3" fill="rgba(255,255,255,0.07)"/>
+  <!-- Smile dimples -->
+  <path d="M176 258 Q178 262 180 260" fill="none" stroke="rgba(130,75,40,0.1)" stroke-width="0.7"/>
+  <path d="M224 258 Q222 262 220 260" fill="none" stroke="rgba(130,75,40,0.1)" stroke-width="0.7"/>
+
+  <!-- Nasolabial folds -->
+  <path d="M174 238 Q177 250 180 258" fill="none" stroke="rgba(120,65,25,0.05)" stroke-width="0.8"/>
+  <path d="M226 238 Q223 250 220 258" fill="none" stroke="rgba(120,65,25,0.05)" stroke-width="0.8"/>
+
+  <!-- Chin -->
+  <ellipse cx="200" cy="290" rx="22" ry="5" fill="rgba(120,65,25,0.04)"/>
+
+  <!-- Philtrum -->
+  <path d="M196 248 Q200 246 204 248" fill="none" stroke="rgba(120,65,25,0.05)" stroke-width="0.7"/>
+</svg>
