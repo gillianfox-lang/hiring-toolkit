@@ -102,12 +102,20 @@ function PhilosophyTab() {
       <div className="playbook-resources">
         <h4 className="playbook-resources-title">Resources at Your Disposal</h4>
         <div className="playbook-resources-grid">
-          {playbookResources.map((r, i) => (
-            <div key={i} className="playbook-resource-chip">
-              <span>{r.icon}</span>
-              <span>{r.title}</span>
-            </div>
-          ))}
+          {playbookResources.map((r, i) =>
+            r.link ? (
+              <a key={i} className="playbook-resource-chip playbook-resource-chip--link" href={r.link} target="_blank" rel="noopener noreferrer">
+                <span>{r.icon}</span>
+                <span>{r.title}</span>
+                <span className="playbook-resource-arrow">&rarr;</span>
+              </a>
+            ) : (
+              <div key={i} className="playbook-resource-chip">
+                <span>{r.icon}</span>
+                <span>{r.title}</span>
+              </div>
+            )
+          )}
         </div>
       </div>
     </div>

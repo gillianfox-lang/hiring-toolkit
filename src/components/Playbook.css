@@ -209,6 +209,26 @@
   color: var(--color-navy);
 }
 
+.playbook-resource-chip--link {
+  text-decoration: none;
+  background: #EFF6FF;
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+.playbook-resource-chip--link:hover {
+  background: #DBEAFE;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.playbook-resource-arrow {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
 /* ===== SLA Tab ===== */
 .playbook-sla {
   display: flex;

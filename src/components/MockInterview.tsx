@@ -124,35 +124,63 @@ async function fetchAiReply(
   return data.choices[0].message.content.trim();
 }
 
+// Stop words to ignore during matching
+const STOP_WORDS = new Set([
+  'i', 'me', 'my', 'we', 'our', 'you', 'your', 'it', 'its', 'he', 'she',
+  'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
+  'of', 'is', 'are', 'was', 'were', 'be', 'been', 'am', 'do', 'did',
+  'has', 'had', 'have', 'will', 'would', 'can', 'could', 'should',
+  'that', 'this', 'with', 'from', 'not', 'so', 'if', 'then', 'than',
+  'also', 'just', 'about', 'into', 'some', 'what', 'when', 'how',
+]);
+
+// Extract meaningful keywords from text, stripping punctuation and stop words
+function extractKeywords(text: string): string[] {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 1 && !STOP_WORDS.has(w));
+}
+
 function matchResponseToOptions(input: string, options: DialogOption[]): number {
-  const words = input.toLowerCase().split(/\s+/).filter(w => w.length > 3);
-  if (words.length === 0) return 0;
+  const inputKeywords = extractKeywords(input);
+  if (inputKeywords.length === 0) {
+    // No meaningful words — pick the middle (adequate) option
+    const adequateIdx = options.findIndex(o => o.quality === 'adequate');
+    return adequateIdx >= 0 ? adequateIdx : 0;
+  }
 
   const scores = options.map(opt => {
-    const optWords = opt.text.toLowerCase().split(/\s+/);
-    let score = 0;
-    for (const word of words) {
-      for (const ow of optWords) {
-        if (ow.includes(word) || word.includes(ow)) {
-          score++;
+    const optKeywords = extractKeywords(opt.text);
+    if (optKeywords.length === 0) return 0;
+
+    // Count matching keywords (using substring matching for stemming approximation)
+    let matchCount = 0;
+    const matchedOptWords = new Set<string>();
+    for (const iw of inputKeywords) {
+      for (const ow of optKeywords) {
+        if (matchedOptWords.has(ow)) continue;
+        // Match if either contains the other, or they share a stem (first 5+ chars match)
+        const stemMatch = iw.length >= 5 && ow.length >= 5 && (iw.slice(0, 5) === ow.slice(0, 5));
+        if (iw === ow || ow.includes(iw) || iw.includes(ow) || stemMatch) {
+          matchCount++;
+          matchedOptWords.add(ow);
           break;
         }
       }
     }
-    return score;
+
+    // Jaccard-like similarity: matches / unique keywords across both
+    const uniqueTotal = new Set([...inputKeywords, ...optKeywords]).size;
+    return matchCount / uniqueTotal;
   });
 
   const maxScore = Math.max(...scores);
-  if (maxScore === 0) {
-    let bestIdx = 0;
-    let bestScore = -1;
-    options.forEach((o, i) => {
-      if (o.score > bestScore) {
-        bestScore = o.score;
-        bestIdx = i;
-      }
-    });
-    return bestIdx;
+  if (maxScore < 0.03) {
+    // Very poor match — default to adequate rather than guessing
+    const adequateIdx = options.findIndex(o => o.quality === 'adequate');
+    return adequateIdx >= 0 ? adequateIdx : 0;
   }
 
   return scores.indexOf(maxScore);

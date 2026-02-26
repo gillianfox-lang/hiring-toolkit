@@ -21,6 +21,7 @@ export interface BenchmarkRow {
 export interface PlaybookResource {
   title: string;
   icon: string;
+  link?: string;
 }
 
 export const playbookIntro = {
@@ -277,6 +278,7 @@ export const slaLegend = [
 ];
 
 export const playbookResources: PlaybookResource[] = [
+  { title: "Recruitment Process Overview", icon: "📋", link: "https://docs.google.com/document/d/12pQFV49wljGhUQaLwuHFQMoEoCH2OniToBSvxddDdSg/edit?tab=t.0" },
   { title: "The Art of Interviewing", icon: "🎨" },
   { title: "ATS Hiring Manager Training", icon: "🖥️" },
   { title: "Hiring Manager Training Guide", icon: "📖" },
