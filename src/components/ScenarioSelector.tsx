@@ -25,10 +25,18 @@ export default function ScenarioSelector({ onSelect, apiKey, onApiKeyChange }: P
           id="openai-key"
           type="password"
           className="scenario-api-key-input"
-          placeholder="sk-... (enables dynamic AI responses)"
+          placeholder="sk-..."
           value={apiKey}
           onChange={e => onApiKeyChange(e.target.value)}
         />
+        <p className="scenario-api-key-help">
+          Paste a key from{' '}
+          <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">
+            platform.openai.com/api-keys
+          </a>{' '}
+          to unlock dynamic AI-powered candidate responses instead of pre-scripted dialogue.
+          Your key is never stored — it's only used during this session.
+        </p>
       </div>
 
       <div className="scenario-grid">
