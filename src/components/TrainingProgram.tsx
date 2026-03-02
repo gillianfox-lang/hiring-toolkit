@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { trainingModules, wrapUp } from '../data/trainingProgram';
-import type { TrainingModule } from '../data/trainingProgram';
+import type { TrainingModule, CheatSheet } from '../data/trainingProgram';
 import LegalSorter from './activities/LegalSorter';
 import ScorecardActivity from './activities/ScorecardActivity';
 import LazyQuestions from './activities/LazyQuestions';
@@ -68,23 +68,88 @@ export default function TrainingProgram() {
             </div>
           </div>
 
-          <div className="wrapup-resources">
-            <h4 className="wrapup-resources-title">Recommended Resources</h4>
-            <div className="wrapup-resources-grid">
-              {wrapUp.resources.map((r, i) => (
-                <div key={i} className="resource-card">
-                  <h5 className="resource-card-title">{r.title}</h5>
-                  <span className="resource-card-source">{r.source}</span>
-                  {r.description && (
-                    <p className="resource-card-desc">{r.description}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function CheatSheetSection({ cheatSheet }: { cheatSheet: CheatSheet }) {
+  return (
+    <div className="cheatsheet">
+      <h4 className="module-section-title">
+        <span className="module-section-icon">📋</span>
+        Quick-Reference Cheat Sheet
+      </h4>
+
+      {/* Do's and Don'ts */}
+      <div className="cheatsheet-columns">
+        <div className="cheatsheet-col cheatsheet-col--do">
+          <div className="cheatsheet-col-header cheatsheet-col-header--do">Do</div>
+          {cheatSheet.dos.map((item, i) => (
+            <div key={i} className="cheatsheet-item">
+              <div className="cheatsheet-item-text">{item.text}</div>
+              {item.detail && <div className="cheatsheet-item-detail">{item.detail}</div>}
+            </div>
+          ))}
+        </div>
+        <div className="cheatsheet-col cheatsheet-col--dont">
+          <div className="cheatsheet-col-header cheatsheet-col-header--dont">Don't</div>
+          {cheatSheet.donts.map((item, i) => (
+            <div key={i} className="cheatsheet-item">
+              <div className="cheatsheet-item-text">{item.text}</div>
+              {item.detail && <div className="cheatsheet-item-detail">{item.detail}</div>}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Key Phrases */}
+      <div className="cheatsheet-section">
+        <div className="cheatsheet-section-header">
+          <span className="cheatsheet-section-icon">💬</span>
+          Key Phrases to Use
+        </div>
+        <div className="cheatsheet-phrases">
+          {cheatSheet.keyPhrases.map((phrase, i) => (
+            <div key={i} className="cheatsheet-phrase">{phrase}</div>
+          ))}
+        </div>
+      </div>
+
+      {/* Quick Tips */}
+      <div className="cheatsheet-section">
+        <div className="cheatsheet-section-header">
+          <span className="cheatsheet-section-icon">💡</span>
+          Quick Tips
+        </div>
+        <div className="cheatsheet-tips">
+          {cheatSheet.quickTips.map((tip, i) => (
+            <div key={i} className="cheatsheet-tip">{tip}</div>
+          ))}
+        </div>
+      </div>
+
+      {/* Red & Green Flags */}
+      <div className="cheatsheet-flags">
+        <div className="cheatsheet-flag-col">
+          <div className="cheatsheet-flag-header cheatsheet-flag-header--red">
+            Red Flags
+          </div>
+          {cheatSheet.redFlags.map((flag, i) => (
+            <div key={i} className="cheatsheet-flag cheatsheet-flag--red">{flag}</div>
+          ))}
+        </div>
+        <div className="cheatsheet-flag-col">
+          <div className="cheatsheet-flag-header cheatsheet-flag-header--green">
+            Green Flags
+          </div>
+          {cheatSheet.greenFlags.map((flag, i) => (
+            <div key={i} className="cheatsheet-flag cheatsheet-flag--green">{flag}</div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -126,6 +191,9 @@ function ModuleCard({
             </ul>
           </div>
 
+          {/* Cheat Sheet */}
+          <CheatSheetSection cheatSheet={mod.cheatSheet} />
+
           {/* Interactive Activities */}
           {activities && activities.length > 0 && (
             <div className="module-section">
@@ -147,24 +215,6 @@ function ModuleCard({
             <p className="module-takeaway-text">{mod.coreTakeaway}</p>
           </div>
 
-          {/* Resources if any */}
-          {mod.resources && mod.resources.length > 0 && (
-            <div className="module-section">
-              <h4 className="module-section-title">
-                <span className="module-section-icon">📚</span>
-                Recommended Resources
-              </h4>
-              <div className="module-resources">
-                {mod.resources.map((r, i) => (
-                  <div key={i} className="module-resource">
-                    <strong>{r.title}</strong>
-                    <span className="module-resource-source">{r.source}</span>
-                    {r.description && <p>{r.description}</p>}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       )}
     </div>
