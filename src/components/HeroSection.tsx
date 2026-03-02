@@ -12,13 +12,13 @@ export default function HeroSection() {
           Hiring Manager<br />Training Toolkit
         </h1>
         <p className="hero-description">
-          Sharpen your interviewing skills with AI-powered mock interviews and
-          comprehensive guides. Practice real scenarios, get instant feedback,
-          and build confidence to find the best talent for your team.
+          Prepare for every interview with structured prep checklists,
+          competency-based questions, and comprehensive guides. Walk into
+          each interview confident, organized, and ready to find the best talent.
         </p>
         <div className="hero-actions">
-          <button className="btn btn-primary" onClick={() => scrollTo('mock-interview')}>
-            Start Mock Interview
+          <button className="btn btn-primary" onClick={() => scrollTo('greenhouse')}>
+            Greenhouse Resources
           </button>
           <button className="btn btn-secondary" onClick={() => scrollTo('question-bank')}>
             Generate Questions
@@ -26,12 +26,12 @@ export default function HeroSection() {
         </div>
         <div className="hero-stats">
           <div className="hero-stat">
-            <span className="hero-stat-number">4</span>
-            <span className="hero-stat-label">Interview Scenarios</span>
+            <span className="hero-stat-number">140+</span>
+            <span className="hero-stat-label">Roles Supported</span>
           </div>
           <div className="hero-stat">
-            <span className="hero-stat-number">60+</span>
-            <span className="hero-stat-label">Question Bank</span>
+            <span className="hero-stat-number">75+</span>
+            <span className="hero-stat-label">Interview Questions</span>
           </div>
           <div className="hero-stat">
             <span className="hero-stat-number">100%</span>
