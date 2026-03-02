@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
-import MockInterview from './components/MockInterview'
+import InterviewPrep from './components/InterviewPrep'
 import QuestionBank from './components/QuestionBank'
 import TrainingProgram from './components/TrainingProgram'
 import Playbook from './components/Playbook'
@@ -13,7 +13,7 @@ export default function App() {
       <Navbar />
       <main>
         <HeroSection />
-        <MockInterview />
+        <InterviewPrep />
         <QuestionBank />
         <TrainingProgram />
         <Playbook />

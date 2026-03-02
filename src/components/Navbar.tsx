@@ -27,7 +27,7 @@ export default function Navbar() {
         </button>
         <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
           <li><button onClick={() => handleNav('hero')}>Home</button></li>
-          <li><button onClick={() => handleNav('mock-interview')}>Mock Interview</button></li>
+          <li><button onClick={() => handleNav('interview-prep')}>Interview Prep</button></li>
           <li><button onClick={() => handleNav('question-bank')}>Question Bank</button></li>
           <li><button onClick={() => handleNav('training')}>Training</button></li>
           <li><button onClick={() => handleNav('playbook')}>Playbook</button></li>
