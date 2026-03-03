@@ -247,7 +247,10 @@ export default function QuestionBank() {
                         <div key={qi} className={`qb-question ${isOpen ? 'qb-question--open' : ''}`}>
                           <button className="qb-question-header" onClick={() => toggleQuestion(qId)}>
                             <span className="qb-question-num">{qi + 1}</span>
-                            <span className="qb-question-text">{q.question}</span>
+                            <div className="qb-question-content">
+                              <span className="qb-question-text">{q.question}</span>
+                              {!isOpen && <span className="qb-expand-hint">Click to view ideal answer &amp; guidance</span>}
+                            </div>
                             <span className={`qb-question-arrow ${isOpen ? 'open' : ''}`}>&#9662;</span>
                           </button>
 
