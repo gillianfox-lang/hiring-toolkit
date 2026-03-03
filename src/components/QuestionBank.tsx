@@ -258,6 +258,10 @@ export default function QuestionBank() {
                                 <p className="qb-detail-value">{q.listenFor}</p>
                               </div>
                               <div className="qb-detail-row">
+                                <span className="qb-detail-label">Ideal answer:</span>
+                                <p className="qb-detail-value qb-detail-ideal">{q.idealAnswer}</p>
+                              </div>
+                              <div className="qb-detail-row">
                                 <span className="qb-detail-label">Follow-up question:</span>
                                 <p className="qb-detail-value qb-detail-followup">{q.followUp}</p>
                               </div>
@@ -266,7 +270,7 @@ export default function QuestionBank() {
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   handleCopy(
-                                    `${q.question}\n\nWhat to listen for: ${q.listenFor}\n\nFollow-up: ${q.followUp}`,
+                                    `${q.question}\n\nWhat to listen for: ${q.listenFor}\n\nIdeal answer: ${q.idealAnswer}\n\nFollow-up: ${q.followUp}`,
                                     qId
                                   );
                                 }}
@@ -290,7 +294,7 @@ export default function QuestionBank() {
                   .map(g => {
                     const header = `## ${g.category.label}`;
                     const qs = g.questions.map((q, i) =>
-                      `${i + 1}. ${q.question}\n   Listen for: ${q.listenFor}\n   Follow-up: ${q.followUp}`
+                      `${i + 1}. ${q.question}\n   Listen for: ${q.listenFor}\n   Ideal answer: ${q.idealAnswer}\n   Follow-up: ${q.followUp}`
                     ).join('\n\n');
                     return `${header}\n\n${qs}`;
                   })

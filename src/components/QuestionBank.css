@@ -472,6 +472,14 @@
   margin: 0;
 }
 
+.qb-detail-ideal {
+  padding: 10px 14px;
+  background: #F0FDF4;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid #22C55E;
+  color: var(--color-navy);
+}
+
 .qb-detail-followup {
   padding: 10px 14px;
   background: #EFF6FF;
