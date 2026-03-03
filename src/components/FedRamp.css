@@ -1,0 +1,344 @@
+.fedramp {
+  padding: 64px 24px;
+  background: var(--color-bg);
+}
+
+.fedramp-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Intro banner */
+.fedramp-intro {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: linear-gradient(135deg, var(--color-navy), #0F172A);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin-bottom: 24px;
+}
+
+.fedramp-intro-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.fedramp-intro-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fedramp-intro-text {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--color-gray-300);
+  margin: 0;
+}
+
+/* Access note */
+.fedramp-access-note {
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 32px;
+}
+
+.fedramp-access-note p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+/* Group titles */
+.fedramp-group-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 0 0 16px 0;
+}
+
+/* Requirement cards */
+.fedramp-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.fedramp-card {
+  background: white;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: box-shadow 0.15s;
+}
+
+.fedramp-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.fedramp-card--open {
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 12px rgba(59, 130, 246, 0.1);
+}
+
+.fedramp-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 20px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.fedramp-card-header:hover {
+  background: var(--color-gray-100);
+}
+
+.fedramp-card-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fedramp-card-title-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fedramp-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.fedramp-card-hint {
+  font-size: 0.8rem;
+  color: var(--color-gray-400);
+  font-weight: 400;
+  transition: color 0.15s;
+}
+
+.fedramp-card-header:hover .fedramp-card-hint {
+  color: var(--color-primary);
+}
+
+.fedramp-card-arrow {
+  font-size: 1.1rem;
+  color: var(--color-gray-400);
+  transition: transform 0.2s, color 0.15s;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.fedramp-card-arrow.open {
+  transform: rotate(180deg);
+}
+
+.fedramp-card-header:hover .fedramp-card-arrow {
+  color: var(--color-primary);
+}
+
+/* Card body */
+.fedramp-card-body {
+  padding: 0 20px 20px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fedrampSlideDown 0.2s ease-out;
+}
+
+@keyframes fedrampSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fedramp-block-text {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+.fedramp-block-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fedramp-block-list li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-gray-600);
+}
+
+.fedramp-block-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #FEF3C7;
+  border: 1px solid #F59E0B;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+}
+
+.fedramp-block-note-icon {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.fedramp-block-note p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #92400E;
+  margin: 0;
+}
+
+.fedramp-block-timeline {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #EFF6FF;
+  border: 1px solid #93C5FD;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+}
+
+.fedramp-block-timeline-icon {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.fedramp-block-timeline p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #1E40AF;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* FAQs */
+.fedramp-faqs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.fedramp-faq {
+  background: white;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: box-shadow 0.15s;
+}
+
+.fedramp-faq:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.fedramp-faq--open {
+  border-color: var(--color-primary);
+}
+
+.fedramp-faq-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 18px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.fedramp-faq-header:hover {
+  background: var(--color-gray-100);
+}
+
+.fedramp-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.fedramp-faq-question {
+  flex: 1;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--color-navy);
+  line-height: 1.5;
+}
+
+.fedramp-faq-arrow {
+  font-size: 1rem;
+  color: var(--color-gray-400);
+  transition: transform 0.2s, color 0.15s;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fedramp-faq-arrow.open {
+  transform: rotate(180deg);
+}
+
+.fedramp-faq-header:hover .fedramp-faq-arrow {
+  color: var(--color-primary);
+}
+
+.fedramp-faq-answer {
+  padding: 0 18px 16px 54px;
+  animation: fedrampSlideDown 0.2s ease-out;
+}
+
+.fedramp-faq-answer p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .fedramp {
+    padding: 48px 16px;
+  }
+
+  .fedramp-intro {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .fedramp-card-body {
+    padding: 0 16px 16px 16px;
+  }
+
+  .fedramp-faq-answer {
+    padding: 0 16px 14px 16px;
+  }
+}
