@@ -33,6 +33,7 @@ export default function Navbar() {
           <li><button onClick={() => handleNav('playbook')}>Playbook</button></li>
           <li><button onClick={() => handleNav('guides')}>Guides</button></li>
           <li><button onClick={() => handleNav('fedramp')}>FedRAMP</button></li>
+          <li><button onClick={() => handleNav('campus')}>Campus</button></li>
         </ul>
       </div>
     </nav>
